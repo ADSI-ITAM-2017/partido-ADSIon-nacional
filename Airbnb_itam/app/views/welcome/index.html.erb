@@ -1,155 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
-  <body>
-  <body>
+</head>
 
-    <div class="brand">Air BnB ITAM</div>
-    <div class="address-bar">lets get to work :)</div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">AirBnBITAM</a>
+  <!--MODALS -->
+<div class="modal fade" id="modalAgregarPropiedades" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar propiedad</h4>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
+            <div class="modal-body">
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="btn btn-large btn-info" href="#" style="height: 150px; width: 150px;"> <!-- href tiene que abrir la ventana para seleccionar una imagen -->
+                          <i class="fa fa-camera" aria-hidden="true"></i> <h4>Agregar imagen </h4></a>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="well" style="height: 150px;">
+                        <!-- Aquí deben ir todas las imágenes que se quieren agregar -->
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2> Información </h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Columna del lado izquierdo -->
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="descripcion_propiedad">Descripción</label>
+                                        <textarea class="form-control" rows="5" id="descripcion_propiedad"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="calle_propiedad">Calle</label>
+                                        <input class="form-control" id="calle_propiedad">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="numext_propiedad">Número exterior</label>
+                                        <input class="form-control" id="numext_propiedad">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="numint_propiedad">Número interior</label>
+                                        <input class="form-control" id="numint_propiedad">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="colonia_propiedad">Colonia</label>
+                                        <input class="form-control" id="colonia_propiedad">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cp_propiedad">C.P.</label>
+                                        <input class="form-control" id="cp_propiedad">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="delegacion_propiedad">Delegación</label>
+                                        <input class="form-control" id="delegacion_propiedad">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Columna del lado derecho -->
+                            <div class="col-md-6">
+
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="precio_propiedad">Precio</label>
+                                            <input class="form-control" id="precio_propiedad">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 20px;">
+
+                                    <div class="col-md-6">
+                                        <label for="tipo_habitacion"> Tipo de habitación </label>
+
+                                        <div class="form-check" id="tipo_habitacion">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="tipo_habitacion" id="casa" value="01" checked>
+                                            Casa
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="tipo_habitacion">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="tipo_habitacion" id="departamento" value="02" checked>
+                                            Departamento
+                                          </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="acompanantes"> No sé qué poner aquí </label>
+                                        <div class="form-check" id="acompanantes">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="acompanantes" id="lugar_completo" value="01" checked>
+                                            Lugar completo
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="acompanantes">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="acompanantes" id="compartido" value="02" checked>
+                                            Compartido
+                                          </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 20px;">
+
+                                    <div class="col-md-12">
+                                        <label for="servicios"> Servicios </label>
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="wifi" value="01" checked>
+                                            Wi-Fi
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="cable" value="02" checked>
+                                            Cable
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="ague" value="03" checked>
+                                            Agua
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="gas" value="04" checked>
+                                            Gas
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="gas_natural" value="05" checked>
+                                            Gas natural
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="servicios" id="telefono" value="06" checked>
+                                            Teléfono
+                                          </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Agregar</button>
+            </div>
         </div>
-        <!-- /.container -->
-    </nav>
+    </div>
+</div>
 
-    <div class="container">
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel slide">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators hidden-xs">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
+  <body>
+      <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Aquí van los botones de navegación y el AirBnB ITAM del lado derecho -->
+                <!-- Deberíamos hacer un logo -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <h1>Air BnB ITAM</h1>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1" >
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="index.html"> Perfil</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Mensajes</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html">Acerca</a>
+                                    </li>
+                                <!-- <li>
+                                    <a href="contact.html">Contact</a>
+                                </li> -->
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- <div>
+            <h1 class="brand">Air BnB ITAM</h1>
+        </div>
+        <div class="address-bar">by Partido-ADSIon-Nacional</div>-->
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                    <a class="navbar-brand" href="index.html">AirBnBITAM</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+               
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <div class="container" style="width: 90%;">
+
+            <!-- <div class="row">
+                <div class="box">
+                    <div class="col-md-12 text-center">
+                        <div id="carousel-example-generic" class="carousel slide">
+                            <!-- Indicators
+                            <ol class="carousel-indicators hidden-xs">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+
+                            <!-- Controls
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="icon-prev"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="icon-next"></span>
+                            </a>
+                        </div>
+                        <!-- <h2 class="brand-before">
+                            <small>Welcome to</small>
+                        </h2>
+                        <h1 class="brand-name">Air BnB ITAM</h1>
+                        <hr class="tagline-divider">
+                        <h2>
+                            <small>By
+                                <strong>Partido ADSION-nacional</strong>
+                            </small>
+                        </h2> 
+                       
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-md-3 text-center">
+                <div class="row">
+                    <div class="box">
+                        <!-- Foto del usuario -->
+                        <div class="row">
+                            <div class="col-md-12" style="margin-bottom: 10%">
+                                <img src="/profile_picture.jpg" class="img-circle" width="150" height="150" id="profile_pic">
                             </div>
                         </div>
 
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="icon-prev"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="icon-next"></span>
-                        </a>
+                        <!-- Datos del usuario -->
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <hr>
+                                <h4 id="nombre_usuario"> Pamela Flores Iberri</h4>
+                                <hr>
+
+                                <p id="dato_usuario_1"> Instituto Tecnológico Autónomo de México</p>
+                                <p id="dato_usuario_2"> Ciudad de México <p> 
+                                <p id="dato_usuario_3"> Más datos </p>
+                                <p id="dato_usuario_4"> Más datos </p>
+
+                                <h4> <strong> Contacto </strong></h4>
+                                <p id="telefono_usuario"> 55 5555 5555 </p>
+                                <p id="mail_usuario"> pamelaflores@email.com </p>
+                            </div>
+                        </div>
                     </div>
-                    <h2 class="brand-before">
-                        <small>Welcome to</small>
-                    </h2>
-                    <h1 class="brand-name">Air BnB ITAM!</h1>
-                    <hr class="tagline-divider">
-                    <h2>
-                        <small>By
-                            <strong>Partido ADSION-nacional</strong>
-                        </small>
-                    </h2>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Build a website
-                        <strong>worth visiting</strong>
-                    </h2>
-                    <hr>
-                    <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
-                    <hr class="visible-xs">
-                    <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                    <p>A huge thanks to <a href="http://join.deathtothestockphoto.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <div class="col-md-8 col-sm-offset-1">
+                <div class="row">
+                    <div class="box">
+                        <div class="col-lg-12">
+                            <div class="row" style="margin-bottom: 4%;">
+                                <div class="col-md-8">
+                                <hr>
+                                <h1 class="intro-text text-center">
+                                    <strong>Propiedades</strong>
+                                </h1>
+                                <hr>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Agregar propiedad </button>
+                                </div>
+                                <!--<p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p> -->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
+                                    <div class="thumbnail">
+                                        <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
+                                        <div id="info_casa" class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p>  
+                                        </div>
+                                    </div> </a>
+                                </div>
+
+                                <!-- Estos modales se tienen que ir agregando con un método, no? -->
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p>  
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <!--    --> 
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Beautiful boxes
-                        <strong>to showcase your content</strong>
-                    </h2>
-                    <hr>
-                    <p>Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+        <!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; Partido-ADSIon-Nacional</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </footer>
 
-    </div>
-    <!-- /.container -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+        <!-- Script to Activate the Carousel -->
+        <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+        </script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
+    </body>
 </body>
-  </body>
 </html>
