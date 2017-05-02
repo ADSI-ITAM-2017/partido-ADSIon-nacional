@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyText
+  calle: MyString
+  numero exterior: 1
+  numero interior: MyString
+  colonia: MyString
+  cp: 1
+  delegacion: MyString
+  precio: MyString
+  tipo de habitacion: 1
+  wifi: false
+  cable: false
+  agua: false
+  gas: false
+  gas natural: false
+  telefono: false
+  tipo de contrato: 1
+
+two:
+  descripcion: MyText
+  calle: MyString
+  numero exterior: 1
+  numero interior: MyString
+  colonia: MyString
+  cp: 1
+  delegacion: MyString
+  precio: MyString
+  tipo de habitacion: 1
+  wifi: false
+  cable: false
+  agua: false
+  gas: false
+  gas natural: false
+  telefono: false
+  tipo de contrato: 1

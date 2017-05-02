@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <a class="btn btn-large btn-info" href="#" style="height: 150px; width: 150px;"> <!-- href tiene que abrir la ventana para seleccionar una imagen -->
-                          <i class="fa fa-camera" aria-hidden="true"></i> <h4>Agregar imagen </h4></a>
+                          <i class="fa fa-camera" aria-hidden="true"></i> <h4>Agregar<br> imagen </h4></a>
                     </div>
                     <div class="col-md-9">
                         <div class="well" style="height: 150px;">
@@ -36,53 +36,54 @@
                     <div class="col-md-12">
                         <div class="row">
                             <!-- Columna del lado izquierdo -->
+                            <%= form_for @propiedad, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
                             <div class="col-md-6">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="descripcion_propiedad">Descripción</label>
-                                        <textarea class="form-control" rows="5" id="descripcion_propiedad"></textarea>
+                                          <%= f.text_area :descripcion, size: "45x5" %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="calle_propiedad">Calle</label>
-                                        <input class="form-control" id="calle_propiedad">
+                                        <%= f.text_field :calle %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="numext_propiedad">Número exterior</label>
-                                        <input class="form-control" id="numext_propiedad">
+                                        <%= f.number_field :num_ext %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="numint_propiedad">Número interior</label>
-                                        <input class="form-control" id="numint_propiedad">
+                                        <%= f.text_field :num_int %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="colonia_propiedad">Colonia</label>
-                                        <input class="form-control" id="colonia_propiedad">
+                                        <%= f.text_field :colonia %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="cp_propiedad">C.P.</label>
-                                        <input class="form-control" id="cp_propiedad">
+                                        <%= f.number_field :cp %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="delegacion_propiedad">Delegación</label>
-                                        <input class="form-control" id="delegacion_propiedad">
+                                        <%= f.text_field :delegacion %>
                                     </div>
                                 </div>
 
@@ -95,7 +96,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="precio_propiedad">Precio</label>
-                                            <input class="form-control" id="precio_propiedad">
+                                            <%= f.number_field :precio %>
                                         </div>
                                     </div>
                                 </div>
@@ -105,36 +106,12 @@
                                     <div class="col-md-6">
                                         <label for="tipo_habitacion"> Tipo de habitación </label>
 
-                                        <div class="form-check" id="tipo_habitacion">
-                                          <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="tipo_habitacion" id="casa" value="01" checked>
-                                            Casa
-                                          </label>
-                                        </div>
-
-                                        <div class="form-check" id="tipo_habitacion">
-                                          <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="tipo_habitacion" id="departamento" value="02" checked>
-                                            Departamento
-                                          </label>
-                                        </div>
+                                        <%= select_tag(:city_id, options_for_select([['Casa', 1], ['Departamento', 2]])) %>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="acompanantes"> No sé qué poner aquí </label>
-                                        <div class="form-check" id="acompanantes">
-                                          <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="acompanantes" id="lugar_completo" value="01" checked>
-                                            Lugar completo
-                                          </label>
-                                        </div>
-
-                                        <div class="form-check" id="acompanantes">
-                                          <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="acompanantes" id="compartido" value="02" checked>
-                                            Compartido
-                                          </label>
-                                        </div>
+                                        <label for="acompanantes"> Tipo de contrato </label>
+                                        <%= select_tag(:city_id, options_for_select([['Lugar completo', 1], ['Compartido', 2]])) %>
                                     </div>
                                 </div>
 
@@ -144,42 +121,42 @@
                                         <label for="servicios"> Servicios </label>
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="wifi" value="01" checked>
+                                            <%= check_box_tag(:wifi) %>
                                             Wi-Fi
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="cable" value="02" checked>
+                                            <%= check_box_tag(:cable) %>
                                             Cable
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="ague" value="03" checked>
+                                            <%= check_box_tag(:agua) %>
                                             Agua
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="gas" value="04" checked>
+                                            <%= check_box_tag(:gas) %>
                                             Gas
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="gas_natural" value="05" checked>
+                                            <%= check_box_tag(:gas_natural) %>
                                             Gas natural
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="servicios" id="telefono" value="06" checked>
+                                            <%= check_box_tag(:pet_dog) %>
                                             Teléfono
                                           </label>
                                         </div>
@@ -188,14 +165,16 @@
                                 </div>
 
                             </div>
+                          
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
+              <%end%>
         </div>
     </div>
 </div>
