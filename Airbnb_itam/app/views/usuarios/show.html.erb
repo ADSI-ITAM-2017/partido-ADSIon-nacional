@@ -327,78 +327,63 @@
                     <div class="box">
                         <div class="col-lg-12">
                             <div class="row" style="margin-bottom: 4%;">
+                                <% if @usuario.is_casero%>
+                                    <div class="col-md-8">
+                                        <hr>
+                                        <h1 class="intro-text text-center">
+                                            <strong>propiedades</strong>
+                                        </h1>
+                                        <hr>
+                                    </div>
+                                    <div class="col-md-4 text-center">                                
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Buscar propiedades </button>
+                                
+                                </div>  
+                                <%else%>
                                 <div class="col-md-8">
                                 <hr>
                                 <h1 class="intro-text text-center">
-                                    <strong>Favoritas</strong>
+                                    <strong>propiedades favoritas</strong>
                                 </h1>
                                 <hr>
                                 </div>
                                 <div class="col-md-4 text-center">
-                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Buscar propiedades </button>
+                                    <a href=<%= url_for(action: 'index', controller:'propiedades')%>>
+                                    <button class="btn btn-primary btn-lg" style="margin-top: 11%;"> Buscar propiedades </button>
+                                    </a>
                                 </div>
+                                <%end%>
                             </div>
                             <div class="row">
+                            <% if @usuario.is_casero%>
+                            <% @propiedades.each do |propiedad| %>
                                 <div class="col-md-4">
                                     <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
                                     <div class="thumbnail">
                                         <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
                                         <div id="info_casa" class="caption text-center">
-                                            <h4>Colonia</h4>
-                                            <p> Precio: $$$$$</p>
-                                            <p> Casa/Depa/Compartido </p>  
+                                            <h4>Colonia: <%= propiedad.colonia %></h4>
+                                            <p> Precio: propiedad.precio</p>
+                                            <p> propiedad.tipo_habitacion </p>  
                                         </div>
                                     </div> </a>
                                 </div>
-
-                                <!-- Estos modales se tienen que ir agregando con un método, no? -->
+                            <%end%>
+                            <%else%>
+                            <% @propiedadesf.each do |propiedad| %>
                                 <div class="col-md-4">
-                                    <a href='#'>
+                                    <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
                                     <div class="thumbnail">
-                                        <img src="/casa_ejemplo.png" width="150" height="150">
-                                        <div class="caption text-center">
-                                            <h4>Colonia</h4>
-                                            <p> Precio: $$$$$</p>
-                                            <p> Casa/Depa/Compartido </p> 
+                                        <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
+                                        <div id="info_casa" class="caption text-center">
+                                            <h4>Colonia: <%= propiedad.colonia %></h4>
+                                            <p> Precio: propiedad.precio</p>
+                                            <p> propiedad.tipo_habitacion </p>  
                                         </div>
                                     </div> </a>
                                 </div>
-                                <div class="col-md-4">
-                                    <a href='#'>
-                                    <div class="thumbnail">
-                                        <img src="/casa_ejemplo.png" width="150" height="150">
-                                        <div class="caption text-center">
-                                            <h4>Colonia</h4>
-                                            <p> Precio: $$$$$</p>
-                                            <p> Casa/Depa/Compartido </p>  
-                                        </div>
-                                    </div> </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href='#'>
-                                    <div class="thumbnail">
-                                        <img src="/casa_ejemplo.png" width="150" height="150">
-                                        <div class="caption text-center">
-                                            <h4>Colonia</h4>
-                                            <p> Precio: $$$$$</p>
-                                            <p> Casa/Depa/Compartido </p> 
-                                        </div>
-                                    </div> </a>
-                                </div>
-                                <div class="col-md-4">
-                                    <a href='#'>
-                                    <div class="thumbnail">
-                                        <img src="/casa_ejemplo.png" width="150" height="150">
-                                        <div class="caption text-center">
-                                            <h4>Colonia</h4>
-                                            <p> Precio: $$$$$</p>
-                                            <p> Casa/Depa/Compartido </p> 
-                                        </div>
-                                    </div> </a>
-                                </div>
-                                <!--    --> 
-
-
+                            <%end%>
+                            <%end%>
                             </div>
                         </div>
                     </div>
@@ -417,20 +402,6 @@
                 </div>
             </div>
         </footer>
-
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-
-        <!-- Script to Activate the Carousel -->
-        <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
-        </script>
-
     </body>
 </body>
 </html>
