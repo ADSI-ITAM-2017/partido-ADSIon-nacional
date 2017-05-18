@@ -10,6 +10,7 @@ class UsuariosController < ApplicationController
 	end
 	def show
 		@usuario = Usuario.find(params[:id])
+		@propiedad = Propiedad.new
 	end
 
 private
