@@ -12,32 +12,3 @@
     <%= yield %>
   </body>
 </html>
-
-<h1>Listado de propiedades </h1>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
-  <% @propiedades.each do |propiedad| %>
-    <tr>
-   	 
-      <td><%= propiedad.title %></td>
-      <td><%= propiedad.calle %></td>
-      <td><%= propiedad.colonia %></td>
-      <td><%= propiedad.precio %></td>
-      <td><%= propiedad.tipo_habitacion %></td>
-      <td><%= propiedad.wifi %></td>
-      <td><%= propiedad.cable %></td>
-      <td><%= propiedad.agua %></td>
-      <td><%= propiedad.gas %></td>
-      <td><%= propiedad.gas_natural %></td>
-      <td><%= propiedad.telefono %></td>
-      <td><%= propiedad.tipo_contrato %></td>
-      <td><%= link_to 'Show', propiedad_path(propiedad) %></td>
-    </tr>
-  <% end %>
-</table>
-    
