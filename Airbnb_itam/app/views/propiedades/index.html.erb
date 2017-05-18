@@ -7,145 +7,156 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-          <!-- Aquí van los botones de navegación y el AirBnB ITAM del lado derecho -->
-          <!-- Deberíamos hacer un logo -->
-          <div class="row">
-              <div class="col-md-5">
-                  <h1>HabITAM</h1>
-              </div>
-              <div class="col-md-6 col-md-offset-1" >
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                      
-                          <ul class="nav navbar-nav">
-                              <li>
-                                  <a href="../usuarios/new.html"> Crear perfil</a>
-                              </li>
-                              <li>
-                                  <a href="about.html">Búsqueda</a>
-                              </li>
-                              <!-- <li>
-                                  <a href="blog.html">Acerca</a>
-                              </li> --> 
-                          <!-- <li>
-                              <a href="contact.html">Contact</a>
-                          </li> -->
-
-                          </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </nav>
-
-  <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-              <a class="navbar-brand" href="index.html">HabITAM</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-         
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-  </nav>
-
-  <div class="containter" style="width: 90%;">
-    <div class="col-md-3 text-center">
-        <div class="row">
-            <div class="box">
-                <!-- Datos del usuario -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Aquí van los botones de navegación y el AirBnB ITAM del lado derecho -->
+                <!-- Deberíamos hacer un logo -->
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <hr>
-                        <h3 id="nombre_usuario"> Filtros</h3>
-                        <hr>
+                    <div class="col-md-5">
+                        <h1>HabITAM</h1>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1" >
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="../usuarios/new.html"> Crear perfil</a>
+                                    </li>
+                                    <li>
+                                        <a href="../propiedades/2">Búsqueda</a>
+                                    </li>
+                                    <!-- <li>
+                                        <a href="blog.html">Acerca</a>
+                                    </li> --> 
+                                <!-- <li>
+                                    <a href="contact.html">Contact</a>
+                                </li> -->
 
-                        <h4> Tipo de habitación </h4>
-                          <div>
-                            <%= label_tag(:tipo_habitacion, "Casa", :class => "col-md-9") %>
-                            <%= check_box_tag :tipo_habitacion, :class => "col-md-3" %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:tipo_habitacion, "Departamento", :class => "col-md-9") %>
-                            <%= check_box_tag(:tipo_habitacion, :class => "col-md-3") %> 
-                          </div>
-              
-                        <br>
-
-                        <h4> Tipo de contrato </h4>
-                          <div>
-                            <%= label_tag(:tipo_contrato, "Lugar completo", :class => "col-md-9") %>
-                            <%= check_box_tag :tipo_contrato, :class => "col-md-3" %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:tipo_contrato, "Compartido", :class => "col-md-9") %>
-                            <%= check_box_tag(:tipo_contrato, :class => "col-md-3") %> 
-                          </div>
-              
-                        <br>
-
-                        <h4> Servicios</h4>
-                          <div>
-                            <%= label_tag(:servicios, "Wi-Fi", :class => "col-md-9") %>
-                            <%= check_box_tag :servicios, :class => "col-md-3" %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:servicios, "Cable", :class => "col-md-9") %>
-                            <%= check_box_tag(:servicios, :class => "col-md-3") %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:servicios, "Agua", :class => "col-md-9") %>
-                            <%= check_box_tag(:servicios, :class => "col-md-3") %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:servicios, "Gas", :class => "col-md-9") %>
-                            <%= check_box_tag(:servicios, :class => "col-md-3") %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:servicios, "Gas natural", :class => "col-md-9") %>
-                            <%= check_box_tag(:servicios, :class => "col-md-3") %> 
-                          </div>
-                          <div>
-                            <%= label_tag(:servicios, "Telefono", :class => "col-md-9") %>
-                            <%= check_box_tag(:servicios, :class => "col-md-3") %> 
-                          </div>
-              
-                        <br>
-
+                                </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+        </nav>
+        <!-- <div>
+            <h1 class="brand">Air BnB ITAM</h1>
         </div>
-    </div>
-    <div class="col-md-8 col-sm-offset-1">
+        <div class="address-bar">by Partido-ADSIon-Nacional</div>-->
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                    <a class="navbar-brand" href="index.html">AirBnBITAM</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+               
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <div class="container" style="width: 90%;">
+
+            <div class="col-md-3 text-center">
+                <div class="row">
+                    <div class="box">
+                        <!-- Datos del usuario -->
+                        <div class="row">
+                          <div class="col-md-10 col-md-offset-1">
+                            <hr>
+                            <h3 id="nombre_usuario"> Filtros</h3>
+                            <hr>
+
+                            <h4> Tipo de habitación </h4>
+                              <div>
+                                <%= label_tag(:tipo_habitacion, "Casa", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag :tipo_habitacion, :class => "col-md-3 col-md-offset-2" %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:tipo_habitacion, "Departamento", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:tipo_habitacion, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+                        
+                              <br>
+
+                            <h4> Tipo de contrato </h4>
+                              <div>
+                                <%= label_tag(:tipo_contrato, "Lugar completo", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag :tipo_contrato, :class => "col-md-3 col-md-offset-2" %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:tipo_contrato, "Compartido", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:tipo_contrato, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+                        
+                              <br>
+
+                            <h4> Servicios</h4>
+                              <div>
+                                <%= label_tag(:servicios, "Wi-Fi", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag :servicios, :class => "col-md-3 col-md-offset-2" %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:servicios, "Cable", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:servicios, "Agua", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:servicios, "Gas", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:servicios, "Gas natural", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+
+                              <div>
+                                <%= label_tag(:servicios, "Telefono", :class => "col-md-7 text-right") %>
+                                <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
+                              </div>
+                        
+                              <br>
+
+                          </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-sm-offset-1">
                 <div class="row">
                     <div class="box">
                         <div class="col-lg-12">
-                            <div class="row" style="margin-bottom: 4%;">
-                                <div class="col-md-8">
+                            <!--<div class="row" style="margin-bottom: 4%;">
+                                <div class="col-md-12">
                                 <hr>
                                 <h1 class="intro-text text-center">
-                                    <strong>Favoritas</strong>
+                                    <strong>Resultados</strong>
                                 </h1>
                                 <hr>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Buscar propiedades </button>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
+                                    <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa 
                                     <div class="thumbnail">
                                         <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
                                         <div id="info_casa" class="caption text-center">
@@ -156,7 +167,7 @@
                                     </div> </a>
                                 </div>
 
-                                <!-- Estos modales se tienen que ir agregando con un método, no? -->
+                                <!-- Estos modales se tienen que ir agregando con un método, no?
                                 <div class="col-md-4">
                                     <a href='#'>
                                     <div class="thumbnail">
@@ -201,7 +212,35 @@
                                         </div>
                                     </div> </a>
                                 </div>
-                                <!--    --> 
+                                 --> 
+                                 <table>
+                                   <tr>
+                                      <hr>
+                                      <h1 class="intro-text text-center">
+                                          <strong>Resultados</strong>
+                                      </h1>
+                                      <hr>
+                                   </tr>
+                                  
+                                   <% @propiedades.each do |propiedad| %>
+                                     <tr>
+                                       
+                                       <td><%= propiedad.title %></td>
+                                       <td><%= propiedad.calle %></td>
+                                       <td><%= propiedad.colonia %></td>
+                                       <td><%= propiedad.precio %></td>
+                                       <td><%= propiedad.tipo_habitacion %></td>
+                                       <td><%= propiedad.wifi %></td>
+                                       <td><%= propiedad.cable %></td>
+                                       <td><%= propiedad.agua %></td>
+                                       <td><%= propiedad.gas %></td>
+                                       <td><%= propiedad.gas_natural %></td>
+                                       <td><%= propiedad.telefono %></td>
+                                       <td><%= propiedad.tipo_contrato %></td>
+                                       <td><%= link_to 'Show', propiedad_path(propiedad) %></td>
+                                     </tr>
+                                   <% end %>
+                                 </table>   
 
 
                             </div>
@@ -209,10 +248,21 @@
                     </div>
                 </div>
             </div>
-  </div>
 
+        </div>
+        <!-- /.container -->
 
-</body>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; Partido-ADSIon-Nacional</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
 
 <html>
 
