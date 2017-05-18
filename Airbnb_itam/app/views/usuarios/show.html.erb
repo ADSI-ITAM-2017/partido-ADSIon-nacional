@@ -36,7 +36,8 @@
                     <div class="col-md-12">
                         <div class="row">
                             <!-- Columna del lado izquierdo -->
-                            <%= form_for @propiedad, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+                            <%= form_for @propiedad, url: {controller: "propiedades",action: "create"}, html: {class: "nifty_form"} do |f| %>
+                            <%= f.hidden_field :usuario, :value => @usuario.id %>
                             <div class="col-md-6">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -123,42 +124,42 @@
                                         <label for="servicios"> Servicios </label>
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:wifi) %>
+                                            <%= f.check_box :wifi %>
                                             Wi-Fi
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:cable) %>
+                                            <%= f.check_box :cable %>
                                             Cable
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:agua) %>
+                                            <%= f.check_box :agua %>
                                             Agua
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:gas) %>
+                                            <%= f.check_box :gas %>
                                             Gas
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:gas_natural) %>
+                                            <%= f.check_box :gas_natural %>
                                             Gas natural
                                           </label>
                                         </div>
 
                                         <div class="form-check" id="servicios">
                                           <label class="form-check-label">
-                                            <%= check_box_tag(:telefono) %>
+                                            <%= f.check_box :telefono %>
                                             Teléfono
                                           </label>
                                         </div>
@@ -327,7 +328,7 @@
                     <div class="box">
                         <div class="col-lg-12">
                             <div class="row" style="margin-bottom: 4%;">
-                                <% if @usuario.is_casero%>
+                                <% if @usuario.is_casero %>
                                     <div class="col-md-8">
                                         <hr>
                                         <h1 class="intro-text text-center">
@@ -336,7 +337,7 @@
                                         <hr>
                                     </div>
                                     <div class="col-md-4 text-center">                                
-                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Buscar propiedades </button>
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Subir propiedad </button>
                                 
                                 </div>  
                                 <%else%>
@@ -370,7 +371,7 @@
                                 </div>
                             <%end%>
                             <%else%>
-                            <% @propiedadesf.each do |propiedad| %>
+                            <% @propiedades.each do |propiedad| %>
                                 <div class="col-md-4">
                                     <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
                                     <div class="thumbnail">
