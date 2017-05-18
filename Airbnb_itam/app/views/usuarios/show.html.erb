@@ -1,4 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+</head>
+
+
+  <!--MODALS -->
+<!--<div class="modal fade" id="modalAgregarPropiedades" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar propiedad</h4>
+            </div>
+            <div class="modal-body">
+                <hr>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a class="btn btn-large btn-info" href="#" style="height: 150px; width: 150px;"> <!-- href tiene que abrir la ventana para seleccionar una imagen 
+                          <i class="fa fa-camera" aria-hidden="true"></i> <h4>Agregar<br> imagen </h4></a>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="well" style="height: 150px;">
+                        <!-- Aquí deben ir todas las imágenes que se quieren agregar
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2> Información </h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!-- Columna del lado izquierdo
+                            <%= form_for @propiedad, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="descripcion_propiedad">Descripción</label>
+                                          <%= f.text_area :descripcion, class: "col-md-12" %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="calle_propiedad">Calle</label>
+                                        <%= f.text_field :calle, class: "col-md-12" %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="numext_propiedad">Número exterior</label>
+                                        <%= f.number_field :num_ext, class: "col-md-6" %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="numint_propiedad">Número interior</label>
+                                        <%= f.text_field :num_int, class: "col-md-6" %>
+                                    </div>
+                                </div>
+
+                                <br> <br>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="colonia_propiedad">Colonia</label>
+                                        <%= f.text_field :colonia, class: "col-md-6" %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cp_propiedad">C.P.</label>
+                                        <%= f.number_field :cp, class: "col-md-6" %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="delegacion_propiedad">Delegación</label>
+                                        <%= f.text_field :delegacion, class: "col-md-6" %>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Columna del lado derecho 
+                            <div class="col-md-6">
+
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="precio_propiedad">Precio</label>
+                                            <%= f.number_field :precio, class: "col-md-12" %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 20px;">
+
+                                    <div class="col-md-6">
+                                        <label for="tipo_habitacion"> Tipo de habitación </label>
+
+                                        <%= select_tag(:city_id, options_for_select([['Casa', 1], ['Departamento', 2]])) %>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="acompanantes"> Tipo de contrato </label>
+                                        <%= select_tag(:city_id, options_for_select([['Lugar completo', 1], ['Compartido', 2]])) %>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-bottom: 20px;">
+
+                                    <div class="col-md-12">
+                                        <label for="servicios"> Servicios </label>
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:wifi) %>
+                                            Wi-Fi
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:cable) %>
+                                            Cable
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:agua) %>
+                                            Agua
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:gas) %>
+                                            Gas
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:gas_natural) %>
+                                            Gas natural
+                                          </label>
+                                        </div>
+
+                                        <div class="form-check" id="servicios">
+                                          <label class="form-check-label">
+                                            <%= check_box_tag(:telefono) %>
+                                            Teléfono
+                                          </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+              <%end%>
+        </div>
+    </div>
+</div> -->
+
+
+  <body>
+      <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Aquí van los botones de navegación y el AirBnB ITAM del lado derecho -->
+                <!-- Deberíamos hacer un logo -->
+                <div class="row">
+                    <div class="col-md-5">
+                        <h1>HabITAM</h1>
+                    </div>
+                    <div class="col-md-6 col-md-offset-1" >
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="../usuarios/new.html"> Crear perfil</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Búsqueda</a>
+                                    </li>
+                                    <!-- <li>
+                                        <a href="blog.html">Acerca</a>
+                                    </li> --> 
+                                <!-- <li>
+                                    <a href="contact.html">Contact</a>
+                                </li> -->
+
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- <div>
+            <h1 class="brand">Air BnB ITAM</h1>
+        </div>
+        <div class="address-bar">by Partido-ADSIon-Nacional</div>-->
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                    <a class="navbar-brand" href="index.html">AirBnBITAM</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+               
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <div class="container" style="width: 90%;">
+
+            <!-- <div class="row">
+                <div class="box">
+                    <div class="col-md-12 text-center">
+                        <div id="carousel-example-generic" class="carousel slide">
+                            <!-- Indicators
+                            <ol class="carousel-indicators hidden-xs">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+                                </div>
+                            </div>
+
+                            <!-- Controls
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="icon-prev"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="icon-next"></span>
+                            </a>
+                        </div>
+                        <!-- <h2 class="brand-before">
+                            <small>Welcome to</small>
+                        </h2>
+                        <h1 class="brand-name">Air BnB ITAM</h1>
+                        <hr class="tagline-divider">
+                        <h2>
+                            <small>By
+                                <strong>Partido ADSION-nacional</strong>
+                            </small>
+                        </h2> 
+                       
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-md-3 text-center">
+                <div class="row">
+                    <div class="box">
+                        <!-- Foto del usuario -->
+                        <div class="row">
+                            <div class="col-md-12" style="margin-bottom: 10%">
+                                <img src="/profile_picture.jpg" class="img-circle" width="150" height="150" id="profile_pic">
+                            </div>
+                        </div>
+
+                        <!-- Datos del usuario -->
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <hr>
+                                <h4 id="nombre_usuario"> <%= @usuario.nombre %> <%= @usuario.apellido %> </h4>
+                                <hr>
+
+                                <p id="dato_usuario_1"> Instituto Tecnológico Autónomo de México</p>
+                                <p id="dato_usuario_2"> <%= @usuario.ubicacion %> <p> 
+                                <p id="dato_usuario_3">  </p>
+                                <p id="dato_usuario_4">  </p>
+                                <br>
+
+                                <h4> <strong> Contacto </strong></h4>
+                                <p id="telefono_usuario"> <%= @usuario.telefono %> </p>
+                                <p id="mail_usuario"> <%= @usuario.email %> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8 col-sm-offset-1">
+                <div class="row">
+                    <div class="box">
+                        <div class="col-lg-12">
+                            <div class="row" style="margin-bottom: 4%;">
+                                <div class="col-md-8">
+                                <hr>
+                                <h1 class="intro-text text-center">
+                                    <strong>Favoritas</strong>
+                                </h1>
+                                <hr>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarPropiedades" style="margin-top: 11%;"> Buscar propiedades </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
+                                    <div class="thumbnail">
+                                        <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
+                                        <div id="info_casa" class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p>  
+                                        </div>
+                                    </div> </a>
+                                </div>
+
+                                <!-- Estos modales se tienen que ir agregando con un método, no? -->
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p>  
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href='#'>
+                                    <div class="thumbnail">
+                                        <img src="/casa_ejemplo.png" width="150" height="150">
+                                        <div class="caption text-center">
+                                            <h4>Colonia</h4>
+                                            <p> Precio: $$$$$</p>
+                                            <p> Casa/Depa/Compartido </p> 
+                                        </div>
+                                    </div> </a>
+                                </div>
+                                <!--    --> 
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>Copyright &copy; Partido-ADSIon-Nacional</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Script to Activate the Carousel -->
+        <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+        </script>
+
+    </body>
+</body>
+</html>
 <p>
   <strong>Nombre:</strong>
   <%= @usuario.nombre %>

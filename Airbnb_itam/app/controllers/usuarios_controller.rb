@@ -11,6 +11,8 @@ class UsuariosController < ApplicationController
 	def show
 		@usuario = Usuario.find(params[:id])
 		@propiedades = Propiedad.where("usuario=?",params[:id])
+		@propiedad = Propiedad.new
+
 	end
 
 private
