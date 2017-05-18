@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518004813) do
+ActiveRecord::Schema.define(version: 20170518072759) do
 
   create_table "propiedads", force: :cascade do |t|
     t.text     "descripcion"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20170518004813) do
     t.integer  "tipo_contrato"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.         "usuario"
+    t.index ["usuario"], name: "index_propiedads_on_usuario"
+  end
+
+  create_table "propiedads_usuarios", id: false, force: :cascade do |t|
+    t.integer "propiedad_id"
+    t.integer "usuario_id"
+    t.index ["propiedad_id"], name: "index_propiedads_usuarios_on_propiedad_id"
+    t.index ["usuario_id"], name: "index_propiedads_usuarios_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -43,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170518004813) do
     t.boolean  "is_casero"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.         "propiedad"
   end
 
 end
