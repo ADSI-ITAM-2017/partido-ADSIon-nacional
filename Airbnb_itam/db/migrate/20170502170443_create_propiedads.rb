@@ -17,7 +17,7 @@ class CreatePropiedads < ActiveRecord::Migration[5.0]
       t.boolean :gas_natural
       t.boolean :telefono
       t.integer :tipo_contrato
-
+      t.boolean :rentado
       t.timestamps
     end
   end
