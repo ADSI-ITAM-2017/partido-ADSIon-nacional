@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
 	def new
 		@usuario= Usuario.new
-		render "usuario/new"
+		render "usuarios/new"
 	end
 end
