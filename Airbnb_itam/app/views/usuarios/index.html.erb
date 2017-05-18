@@ -1,0 +1,23 @@
+<h1>Listado de propiedades </h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @usuarios.each do |usuario| %>
+    <tr>
+   	 
+      <td><%= usuario.nombre %></td>
+      <td><%= usuario.apellido %></td>
+      <td><%= usuario.email %></td>
+      <td><%= usuario.fecha_nac %></td>
+      <td><%= usuario.ubicacion %></td>
+      <td><%= usuario.telefono %></td>
+      <td><%= usuario.is_casero %></td>
+      <td><%= link_to 'Show', usuarios_path(usuarios) %></td>
+    </tr>
+  <% end %>
+</table>
+

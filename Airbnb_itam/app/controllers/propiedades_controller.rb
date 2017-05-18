@@ -1,8 +1,8 @@
 class PropiedadesController < ApplicationController
 	def index
-		@propiedad = Propiedad.new
-		render "propiedades/index"
+		@propiedades = Propiedad.all
 	end
 	def show
+		@propiedad = propiedad.find(params[:id])
 	end
 end
