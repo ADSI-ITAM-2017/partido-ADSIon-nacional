@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                    <a class="navbar-brand" href="index.html">AirBnBITAM</a>
+                    <a class="navbar-brand" href="index.html">HabITAM</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                
@@ -79,12 +79,12 @@
                             <hr>
 
                             <h4> Tipo de habitación </h4>
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:tipo_habitacion, "Casa", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag :tipo_habitacion, :class => "col-md-3 col-md-offset-2" %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:tipo_habitacion, "Departamento", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:tipo_habitacion, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
@@ -92,12 +92,12 @@
                               <br>
 
                             <h4> Tipo de contrato </h4>
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:tipo_contrato, "Lugar completo", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag :tipo_contrato, :class => "col-md-3 col-md-offset-2" %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:tipo_contrato, "Compartido", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:tipo_contrato, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
@@ -105,37 +105,42 @@
                               <br>
 
                             <h4> Servicios</h4>
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Wi-Fi", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag :servicios, :class => "col-md-3 col-md-offset-2" %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Cable", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Agua", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Gas", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Gas natural", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
 
-                              <div>
+                              <div class="row">
                                 <%= label_tag(:servicios, "Telefono", :class => "col-md-7 text-right") %>
                                 <%= check_box_tag(:servicios, :class => "col-md-3 col-md-offset-2") %> 
                               </div>
                         
                               <br>
+                              <br>
+
+                              <div class="col-lg-12">
+                                <button type="submit" class="btn btn-primary">Actualizar resultados</button>
+                              </div>
 
                           </div>
                         </div> 
