@@ -1,4 +1,271 @@
-<p>
-  <strong>Title:</strong>
-  <%= @propiedad.descripcion %>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Aquí van los botones de navegación y el AirBnB ITAM del lado derecho -->
+            <!-- Deberíamos hacer un logo -->
+            <div class="row">
+                <div class="col-md-5">
+                    <h1>HabITAM</h1>
+                </div>
+                <div class="col-md-7" >
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href=<%= url_for(action: 'index', controller: 'welcome') %>>
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../usuarios/new.html"> Crear perfil</a>
+                                </li>
+                                <li>
+                                    <a href="../propiedades/">Buscar</a>
+                                </li>
+                            <!-- <li>
+                                <a href="contact.html">Contact</a>
+                            </li> -->
+
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <div>
+        <h1 class="brand">Air BnB ITAM</h1>
+    </div>
+    <div class="address-bar">by Partido-ADSIon-Nacional</div>-->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">HabITAM</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container" style="width: 90%;">
+
+        <div class="col-md-12 text-center">
+            <div class="row">
+                <div class="box">
+                    <!-- Datos del usuario -->
+                    <div class="row">
+                    	<div class="col-md-12 text-center">
+                    		<hr>
+                    		<h3 id="nombre_usuario"> Detalles de la casa</h3>
+                    		<hr>
+                    	</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 col-md-offset-1 text-left">
+                        
+                        <p>
+                        	<h3> $<%= @propiedad.precio %></h3>
+                        </p>
+                        <p>
+                          <strong>Descripción: </strong>
+                          <%= @propiedad.descripcion %>
+                        </p>
+                        
+
+                        <p>
+                        	<strong>Colonia: </strong>
+                        	<%= @propiedad.colonia %>
+                        </p>
+                        
+
+                        <p>
+                         	<strong>Tipo de habitación:	</strong>
+                        	<%= @propiedad.tipo_habitacion %>
+                        </p>
+                        
+
+                        <p>
+                        	<strong> Tipo de contrato: </strong>
+                        	<%= @propiedad.tipo_contrato %>
+                        </p>
+                        
+
+                        <p>
+                        	<%= @propiedad.wifi %>
+                        </p>
+                        
+
+                        <p>
+                        	<%= @propiedad.cable %>
+                        </p>
+                        
+
+                        <p>
+                        	<%= @propiedad.agua %>
+                        </p>
+                        
+
+                        <p>
+                        	<%= @propiedad.gas %>
+                        </p>
+                        
+
+                        <p>
+                        	<%= @propiedad.gas_natural %>
+                        </p>
+                        
+
+                      </div>
+                      <div class="col-md-6">
+                      	<div class="col-md-12 text-center">
+                      	<br>
+  	                        <div id="carousel-example-generic" class="carousel slide">
+  	                            <!-- Indicators -->
+  	                            <ol class="carousel-indicators hidden-xs">
+  	                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+  	                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+  	                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  	                            </ol>
+
+  	                            <!-- Wrapper for slides -->
+  	                            <div class="carousel-inner">
+  	                                <div class="item active">
+  	                                    <img class="img-responsive img-full" src="/recamara_departamento.jpg" alt="">
+  	                                </div>
+  	                                <div class="item">
+  	                                    <img class="img-responsive img-full" src="/cocina_departamento.jpg" alt="">
+  	                                </div>
+  	                                <div class="item">
+  	                                    <img class="img-responsive img-full" src="/sala_departamento.jpg" alt="">
+  	                                </div>
+  	                            </div>
+
+  	                            <!-- Controls -->
+  	                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+  	                                <span class="icon-prev"></span>
+  	                            </a>
+  	                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+  	                                <span class="icon-next"></span>
+  	                            </a>
+  	                        </div>
+  	                    </div>
+                      </div>                  
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-7 col-sm-offset-1">
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12">
+
+                        <!--<div class="row" style="margin-bottom: 4%;">
+                            <div class="col-md-12">
+                            <hr>
+                            <h1 class="intro-text text-center">
+                                <strong>Resultados</strong>
+                            </h1>
+                            <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href='#'> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa 
+                                <div class="thumbnail">
+                                    <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
+                                    <div id="info_casa" class="caption text-center">
+                                        <h4>Colonia</h4>
+                                        <p> Precio: $$$$$</p>
+                                        <p> Casa/Depa/Compartido </p>  
+                                    </div>
+                                </div> </a>
+                            </div>
+
+                            <!-- Estos modales se tienen que ir agregando con un método, no?
+                            <div class="col-md-4">
+                                <a href='#'>
+                                <div class="thumbnail">
+                                    <img src="/casa_ejemplo.png" width="150" height="150">
+                                    <div class="caption text-center">
+                                        <h4>Colonia</h4>
+                                        <p> Precio: $$$$$</p>
+                                        <p> Casa/Depa/Compartido </p> 
+                                    </div>
+                                </div> </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href='#'>
+                                <div class="thumbnail">
+                                    <img src="/casa_ejemplo.png" width="150" height="150">
+                                    <div class="caption text-center">
+                                        <h4>Colonia</h4>
+                                        <p> Precio: $$$$$</p>
+                                        <p> Casa/Depa/Compartido </p>  
+                                    </div>
+                                </div> </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href='#'>
+                                <div class="thumbnail">
+                                    <img src="/casa_ejemplo.png" width="150" height="150">
+                                    <div class="caption text-center">
+                                        <h4>Colonia</h4>
+                                        <p> Precio: $$$$$</p>
+                                        <p> Casa/Depa/Compartido </p> 
+                                    </div>
+                                </div> </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href='#'>
+                                <div class="thumbnail">
+                                    <img src="/casa_ejemplo.png" width="150" height="150">
+                                    <div class="caption text-center">
+                                        <h4>Colonia</h4>
+                                        <p> Precio: $$$$$</p>
+                                        <p> Casa/Depa/Compartido </p> 
+                                    </div>
+                                </div> </a>
+                            </div>
+                             
+
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Partido-ADSIon-Nacional</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<html>

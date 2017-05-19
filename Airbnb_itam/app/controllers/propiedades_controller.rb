@@ -3,7 +3,7 @@ class PropiedadesController < ApplicationController
 		@propiedades = Propiedad.all
 	end
 	def show
-		@propiedad = propiedad.find(params[:id])
+		@propiedad = Propiedad.find(params[:id])
 	end
 	def create
 		@propiedad = Propiedad.new(propiedad_params)

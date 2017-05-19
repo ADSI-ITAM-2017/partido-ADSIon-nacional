@@ -29,11 +29,19 @@ ActiveRecord::Schema.define(version: 20170519023848) do
     t.boolean  "gas_natural"
     t.boolean  "telefono"
     t.integer  "tipo_contrato"
-    t.boolean  "rentado"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.         "usuario"
     t.integer  "usuario_id"
+    t.index ["usuario"], name: "index_propiedads_on_usuario"
     t.index ["usuario_id"], name: "index_propiedads_on_usuario_id"
+  end
+
+  create_table "propiedads_usuarios", id: false, force: :cascade do |t|
+    t.integer "propiedad_id"
+    t.integer "usuario_id"
+    t.index ["propiedad_id"], name: "index_propiedads_usuarios_on_propiedad_id"
+    t.index ["usuario_id"], name: "index_propiedads_usuarios_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -46,6 +54,7 @@ ActiveRecord::Schema.define(version: 20170519023848) do
     t.boolean  "is_casero"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.         "propiedad"
   end
 
 end
