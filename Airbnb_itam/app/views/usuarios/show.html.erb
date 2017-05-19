@@ -37,7 +37,7 @@
                         <div class="row">
                             <!-- Columna del lado izquierdo -->
                             <%= form_for @propiedad, url: {controller: "propiedades",action: "create"}, html: {class: "nifty_form"} do |f| %>
-                            <%= f.hidden_field :usuario, :value => @usuario.id %>
+                            <%= f.hidden_field :usuario_id, :value => @usuario.id %>
                             <div class="col-md-6">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -109,12 +109,12 @@
                                     <div class="col-md-6">
                                         <label for="tipo_habitacion"> Tipo de habitación </label>
 
-                                        <%= select_tag(:city_id, options_for_select([['Casa', 1], ['Departamento', 2]])) %>
+                                        <%= f.select(:tipo_habitacion, options_for_select([['Casa', 'Casa'], ['Departamento', 'Departamento']])) %>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label for="acompanantes"> Tipo de contrato </label>
-                                        <%= select_tag(:city_id, options_for_select([['Lugar completo', 1], ['Compartido', 2]])) %>
+                                        <%= f.select(:tipo_contrato, options_for_select([['Lugar completo', 'lugar completo'], ['Compartido', 'Compartido']])) %>
                                     </div>
                                 </div>
 
@@ -366,8 +366,9 @@
                                         <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
                                         <div id="info_casa" class="caption text-center">
                                             <h4>Colonia: <%= propiedad.colonia %></h4>
-                                            <p> Precio: propiedad.precio</p>
-                                            <p> propiedad.tipo_habitacion </p>  
+                                            <p> Precio:<%=propiedad.precio %></p>
+                                            <p> <%= propiedad.tipo_habitacion %> </p>
+                                            <p> <%= propiedad.tipo_contrato %> </p>    
                                         </div>
                                     </div> </a>
                                 </div>

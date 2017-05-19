@@ -10,8 +10,7 @@ class UsuariosController < ApplicationController
 	end
 	def show
 		@usuario = Usuario.find(params[:id])
-		@propiedades = Propiedad.where("usuario=?",params[:id])
-		@propiedadesf= Propiedad.where("usuarios=?", params[:id])
+		@propiedades = Propiedad.where("usuario_id=?",params[:id])
 		@propiedad = Propiedad.new
 	end
 

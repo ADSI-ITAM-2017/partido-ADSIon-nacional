@@ -12,6 +12,6 @@ class PropiedadesController < ApplicationController
 	end
 	private
   	def propiedad_params
-    	params.require(:propiedad).permit(:descripcion, :calle, :num_ext, :num_int, :colonia, :cp, :delegacion, :precio, :tipo_habitacion, :wifi, :cable, :agua, :gas, :gas_natural, :telefono, :tipo_contrato, :usuario)
+    	params.require(:propiedad).permit(:descripcion, :calle, :num_ext, :num_int, :colonia, :cp, :delegacion, :precio, :tipo_habitacion, :wifi, :cable, :agua, :gas, :gas_natural, :telefono, :tipo_contrato, :usuario_id)
   	end
 end
