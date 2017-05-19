@@ -220,34 +220,20 @@
                                     </div> </a>
                                 </div>
                                  --> 
-                                 <table>
-                                   <tr>
-                                      <hr>
-                                      <h1 class="intro-text text-center">
-                                          <strong>Resultados</strong>
-                                      </h1>
-                                      <hr>
-                                   </tr>
-                                  
-                                   <% @propiedades.each do |propiedad| %>
-                                     <tr>
-                                       
-                                       <td><%= propiedad.descripcion %></td>
-                                       <td><%= propiedad.calle %></td>
-                                       <td><%= propiedad.colonia %></td>
-                                       <td><%= propiedad.precio %></td>
-                                       <td><%= propiedad.tipo_habitacion %></td>
-                                       <td><%= propiedad.wifi %></td>
-                                       <td><%= propiedad.cable %></td>
-                                       <td><%= propiedad.agua %></td>
-                                       <td><%= propiedad.gas %></td>
-                                       <td><%= propiedad.gas_natural %></td>
-                                       <td><%= propiedad.telefono %></td>
-                                       <td><%= propiedad.tipo_contrato %></td>
-                                       <td><%= link_to 'Show', propiedad_path(propiedad) %></td>
-                                     </tr>
-                                   <% end %>
-                                 </table>   
+                               <% @propiedades.each do |propiedad| %>
+                                <div class="col-md-4">
+                                    <a href=<%url_for("/propiedades/#{@propiedad.id}") %>> <!-- Aquí aparecerá un modal para mostrar más detalles de la casa -->
+                                    <div class="thumbnail">
+                                        <img id="imagen_casa" src="/casa_ejemplo.png" width="150" height="150">
+                                        <div id="info_casa" class="caption text-center">
+                                            <h4>Colonia: <%= propiedad.colonia %></h4>
+                                            <p> Precio:<%=propiedad.precio %></p>
+                                            <p> <%= propiedad.tipo_habitacion %> </p>
+                                            <p> <%= propiedad.tipo_contrato %> </p>    
+                                        </div>
+                                    </div> </a>
+                                </div>
+                            <%end%>
 
 
                             </div>
